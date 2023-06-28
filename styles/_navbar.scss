@@ -1,0 +1,17 @@
+.navbar {
+  display: flex;
+  padding: $padding-150;
+  justify-content: space-between;
+  margin: 30px 0;
+
+  .wrapper_left {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+
+    .nav-items ul {
+      display: flex;
+      gap: 2vw;
+    }
+  }
+}

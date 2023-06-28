@@ -1,0 +1,10 @@
+.hero_content {
+  display: flex;
+  align-items: center;
+  margin: 50px auto 50px;
+  padding: $padding-150;
+  .wrapper_left,
+  .wrapper_rigth {
+    width: 50%;
+  }
+}

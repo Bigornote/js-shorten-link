@@ -1,0 +1,52 @@
+.shorten {
+  .wrapper_shorten {
+    background: linear-gradient(
+      0deg,
+      $ligth-gray 0%,
+      $ligth-gray 35%,
+      $white 35%
+    );
+    padding: 100px 150px 10px;
+    .input-shorten {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 1vw;
+      background: url("../images/bg-shorten-desktop.svg");
+      background-color: $dark-violet;
+      padding: 50px;
+      border-radius: 10px;
+      input {
+        width: 70%;
+      }
+      button {
+        width: 15%;
+        margin: 0;
+      }
+    }
+  }
+
+  .wrapper_result {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: $ligth-gray;
+    padding: 10px 150px 50px;
+
+    .result-shorten {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: $white;
+      padding: 15px 30px;
+      border-radius: 15px;
+      color: $dark-violet;
+
+      .short-url {
+        display: flex;
+        align-items: center;
+        gap: 1vw;
+        color: $color-primary;
+      }
+    }
+  }
+}

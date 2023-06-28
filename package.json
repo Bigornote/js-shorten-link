@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "gsap": "^3.12.1",
+    "sass": "^1.63.6"
+  }
+}

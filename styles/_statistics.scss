@@ -1,0 +1,32 @@
+.statitics {
+  padding: 50px 150px;
+  background-color: $ligth-gray;
+
+  .wrapper_content {
+    max-width: 500px;
+    text-align: center;
+    margin: auto;
+  }
+  .wrapper_card {
+    position: relative;
+    display: flex;
+    gap: 2vw;
+    margin: 70px auto;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      background-color: $color-primary;
+      width: 100%;
+      height: 10px;
+      transform: translate(0%, -50%);
+    }
+
+    & .card:nth-child(2) {
+      margin-top: 40px;
+    }
+    & .card:nth-child(3) {
+      margin-top: 80px;
+    }
+  }
+}
