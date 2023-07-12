@@ -11,6 +11,8 @@
       href="./images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="./styles/main.css" />
+    <script src="./scripts/index.js" defer></script>
+    <!-- <script type="module" src="./scripts/utils/api-shortcut.js" defer></script> -->
 
     <title>
       Frontend Mentor Challenge | Shortly URL shortening API Challenge
@@ -62,6 +64,8 @@
       </div>
     </section>
 
+    <!-- SHORTEN CONTENT -->
+
     <section class="shorten">
       <div class="wrapper_shorten">
         <div class="input-shorten">
@@ -70,33 +74,15 @@
             id="long-url-input"
             placeholder="Shorten an link here..."
           />
-          <button class="btn-secondary" onclick="handleShorten()">
+          <button id="btn-shorten" class="btn-secondary" onclick="subtmitUrl()">
             Shorten it !
           </button>
         </div>
       </div>
-      <div class="wrapper_result">
-        <div class="result-shorten">
-          <div class="long-url">
-            <p>test long url</p>
-          </div>
-          <div class="short-url">
-            <p>test short url</p>
-            <button class="btn-secondary">Copy</button>
-          </div>
-        </div>
-
-        <div class="result-shorten">
-          <div class="long-url">
-            <p>test long url</p>
-          </div>
-          <div class="short-url">
-            <p>test short url</p>
-            <button class="btn-secondary">Copy</button>
-          </div>
-        </div>
-      </div>
+      <div class="wrapper_result"></div>
     </section>
+
+    <!-- END SHORTEN CONTENT -->
 
     <section class="statitics">
       <div class="wrapper_content">
