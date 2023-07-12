@@ -18,7 +18,7 @@ const subtmitUrl = async (e) => {
     const value = inputUrl.value;
     shortenBtn.innerHTML = "Loading";
     const res = await fetchDataApi("shorten?url=" + value);
-    displayResult(res.short_link, value);
+    displayResult(res.short_link3, value);
   } catch (e) {
     throw new Error(e.message);
   } finally {
@@ -26,6 +26,8 @@ const subtmitUrl = async (e) => {
     shortenBtn.innerHTML = "Shorten it !";
   }
 };
+
+shortenBtn.addEventListener("click", subtmitUrl);
 
 const copyUrl = (url) => {
   const copyBtn = document.getElementById("copy-btn");
@@ -52,15 +54,18 @@ const displayResult = (shortUrl, longUrl) => {
 
       <div class="short-url">
         <p>${shortUrl}</p>
-        <button id="copy-btn" class="btn-secondary"  onClick="return copyUrl('${shortUrl}')">
+        <button id="copy-btn" class="btn-secondary">
           Copy
         </button>
       </div>
   `;
-
   div.innerHTML = content;
-
   resultWrapper.appendChild(div);
+
+  const copyBtn = div.querySelector("#copy-btn");
+  copyBtn.addEventListener("click", () => {
+    copyUrl(shortUrl);
+  });
 
   localStorage.setItem("displayResult", resultWrapper.innerHTML);
 };
