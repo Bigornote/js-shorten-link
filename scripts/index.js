@@ -27,6 +27,20 @@ const subtmitUrl = async (e) => {
   }
 };
 
+const copyUrl = (url) => {
+  const copyBtn = document.getElementById("copy-btn");
+  copyBtn.innerHTML = "Copied !";
+  copyBtn.style.backgroundColor = "hsl(257, 27%, 26%)";
+  const elementTemp = document.createElement("textarea");
+  elementTemp.value = url;
+  document.body.appendChild(elementTemp);
+
+  elementTemp.select();
+  document.execCommand("copy");
+
+  document.body.removeChild(elementTemp);
+};
+
 const displayResult = (shortUrl, longUrl) => {
   const div = document.createElement("div");
   div.classList.add("result-shorten");
@@ -38,7 +52,7 @@ const displayResult = (shortUrl, longUrl) => {
 
       <div class="short-url">
         <p>${shortUrl}</p>
-        <button class="btn-secondary"  onClick="return copyUrl('${shortUrl}')">
+        <button id="copy-btn" class="btn-secondary"  onClick="return copyUrl('${shortUrl}')">
           Copy
         </button>
       </div>
@@ -47,4 +61,11 @@ const displayResult = (shortUrl, longUrl) => {
   div.innerHTML = content;
 
   resultWrapper.appendChild(div);
+
+  localStorage.setItem("displayResult", resultWrapper.innerHTML);
 };
+
+const storedResult = localStorage.getItem("displayResult");
+if (storedResult) {
+  resultWrapper.innerHTML = storedResult;
+}
